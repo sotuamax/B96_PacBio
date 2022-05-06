@@ -18,5 +18,9 @@ This is a repository for B96 genome assembly, scaffolding, and annotation proces
 ## Genome scaffolding based on reference genome B73 v5.0
 
 ## Gene annotation pipeline using transcriptome evidence
-
+We used repeat-masked genome for gene annotation. Given the fact that some gene space (with RNA-evidence) might be masked from gene model prediction, we developed a script to correct genome spaces which have RNA support by taking RNA-seq alignment file. 
+```bash
+# use the unmask_RNA.py (parallel process)
+mpiexec -n 10 python unmask_RNA.py -fasta <fasta> -bam <RNA_bam> -O <output>
+```
 ##
